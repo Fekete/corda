@@ -249,6 +249,7 @@ interface VaultService {
      * are consumed as part of cash spending.
      */
     fun softLockRelease(lockId: UUID, stateRefs: NonEmptySet<StateRef>? = null)
+    // DOCEND SoftLockAPI
 
     /**
      * Helper function to combine using [VaultQueryService] calls to determine spendable states and soft locking them.
@@ -269,8 +270,6 @@ interface VaultService {
                                                                          eligibleStatesQuery: QueryCriteria,
                                                                          amount: Amount<U>,
                                                                          contractType: Class<out T>): List<StateAndRef<T>>
-
-    // DOCEND SoftLockAPI
 
 }
 
